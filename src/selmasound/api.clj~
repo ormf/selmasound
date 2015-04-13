@@ -1,0 +1,16 @@
+(ns selmasound.api
+  (:import [java.lang.management ManagementFactory])
+  (:require clojure.stacktrace
+            selmasound.samples.selmasound
+            selmasound.samples.search-results
+            selmasound.samples.url
+            )
+  (:use [overtone.live]
+        [overtone.helpers.ns]))
+
+(defn immigrate-selmasound-api []
+  (immigrate 'overtone.live
+             'selmasound.samples.selmasound
+             'selmasound.samples.selmasound.search_results
+             'selmasound.samples.selmasound.url
+             ))
